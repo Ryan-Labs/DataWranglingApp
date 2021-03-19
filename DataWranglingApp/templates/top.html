@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Top 10 destinations</h1>
+
+<table class="table">
+    <tr>
+        <th>Destination</th>
+        <th class="text-right">Nb flights</th>
+    </tr>
+    {% for object in top_dest %}
+    <tr>
+        <td>{{ object.dest }}</td>
+        <td class="text-right">{{ object.total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h1>Top 3 origins</h1>
+
+<table class="table">
+    <tr>
+        <th>Origin</th>
+        <th class="text-right">Nb flights</th>
+    </tr>
+    {% for object in top_origin %}
+    <tr>
+        <td>{{ object.ogn }}</td>
+        <td class="text-right">{{ object.total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
